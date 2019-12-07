@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <!-- Logo của ứng dụng
+        * dài, rộng 250dp
+        * set ảnh ở vị trí trung tâm "true"
+        * cách top là 20dp-->
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        />
+    <!--Button đăng kí tài khoản
+        *set id cho button đăng ki
+        *dài: match, rộng : wrap
+        * set button đăng kí nằm trên button đăng nhập-->
+    <Button
+        android:id="@+id/btn_dangki_id"
+        android:text="Đăng kí tài khoản"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_dangnhap_id"
+        />
+    <!--Button đăng nhập
+    *set id cho button đăng nhập
+    * set button nằm dưới cùng của Relative_Layout "true"
+    *set cách dưới lên 10dp
+    *dài: match, rộng : wrap-->
+    <Button
+        android:id="@+id/btn_dangnhap_id"
+        android:text="Đăng nhập"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+
+
+
+</RelativeLayout>

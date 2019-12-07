@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "239286914007",
+    "firebase_url": "https://knk-app.firebaseio.com",
+    "project_id": "knk-app",
+    "storage_bucket": "knk-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239286914007:android:3b4d42e88eab4d38235992",
+        "android_client_info": {
+          "package_name": "com.example.knkapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239286914007-2aj3710t2on612k0r96cru7437nv8gko.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.knkapp",
+            "certificate_hash": "c87df3837ff170987e75347744a1a3e62f22cea8"
+          }
+        },
+        {
+          "client_id": "239286914007-0forn99rmfqgsca9b9v3grrso7l8mata.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhR4Ry8rpsjzLOd_cNW8qK4FW2GbiiEIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "239286914007-0forn99rmfqgsca9b9v3grrso7l8mata.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

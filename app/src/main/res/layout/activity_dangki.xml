@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".DangkiActivity">
+
+    <!-- Textview đăng kí
+        * set textview ở giữa
+        * màu đen
+        * kích thước là 25dp
+    -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Đăng kí tài khoản"
+        android:textColor="@color/colorBlack"
+        android:textSize="25dp"
+        />
+    <!-- Editview nhập email
+    * set textview ở giữa
+    * set nằm ngang ở trung tâm là true centerHorizontal
+    * set nằm dọc ở trung tâm là true centerVertical
+    * đặt id cho input
+    - bên trong có một input
+        *
+-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/emailTTL">
+        <EditText
+            android:id="@+id/Edit_email_id"
+            android:inputType="textEmailAddress"
+            android:hint="Nhập email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Editview nhập password -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/passwordTTL"
+        android:layout_below="@id/emailTTL"
+        app:passwordToggleEnabled="true">
+        <EditText
+            android:id="@+id/Edit_password_id"
+            android:inputType="textPassword"
+            android:hint="Nhập password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--Button đăng kí tài khoản người dùng-->
+    <Button
+        android:id="@+id/btn_dangki_id"
+        android:text="Đăng kí"
+        android:layout_below="@id/passwordTTL"
+        android:layout_centerHorizontal="true"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
