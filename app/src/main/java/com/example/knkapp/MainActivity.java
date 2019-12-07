@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         btnDangnhap= findViewById(R.id.btn_dangnhap_id);
         // xử lý click của button đăng kí tài khoản
         //tran dang khoa la toi
-        //FDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+        //FDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDfdfdf
         btnDangki.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
