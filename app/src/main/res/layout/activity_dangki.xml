@@ -35,7 +35,7 @@
         android:layout_centerVertical="true"
         android:id="@+id/emailTTL">
         <EditText
-            android:id="@+id/Edit_email_id"
+            android:id="@+id/Edit_Demail_id"
             android:inputType="textEmailAddress"
             android:hint="Nhập email"
             android:layout_width="match_parent"

@@ -45,7 +45,7 @@ public class DangkiActivity extends AppCompatActivity {
         actionBar.setDisplayShowCustomEnabled(true); // hiển thị chế độ tùy chỉnh
 
         // gọi id từ view
-        EditEmail = findViewById(R.id.Edit_email_id);
+        EditEmail = findViewById(R.id.Edit_Demail_id);
         EditPassword= findViewById(R.id.Edit_Dpassword_id);
         btnDangki = findViewById(R.id.btn_Ddangki_id);
 
