@@ -21,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
         btnDangki = findViewById(R.id.btn_dangki_id);
         btnDangnhap= findViewById(R.id.btn_dangnhap_id);
         // xử lý click của button đăng kí tài khoản
-        //tran dang khoa la toi
-        //FDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDfdfdffdfdf
+        // project nay cua Tran Dang Khoa
         btnDangki.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
