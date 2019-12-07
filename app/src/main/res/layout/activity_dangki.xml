@@ -52,7 +52,7 @@
         android:layout_below="@id/emailTTL"
         app:passwordToggleEnabled="true">
         <EditText
-            android:id="@+id/Edit_password_id"
+            android:id="@+id/Edit_Dpassword_id"
             android:inputType="textPassword"
             android:hint="Nhập password"
             android:layout_width="match_parent"
@@ -61,7 +61,7 @@
 
     <!--Button đăng kí tài khoản người dùng-->
     <Button
-        android:id="@+id/btn_dangki_id"
+        android:id="@+id/btn_Ddangki_id"
         android:text="Đăng kí"
         android:layout_below="@id/passwordTTL"
         android:layout_centerHorizontal="true"

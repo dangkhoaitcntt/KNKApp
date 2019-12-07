@@ -23,11 +23,11 @@
         *dài: match, rộng : wrap
         * set button đăng kí nằm trên button đăng nhập-->
     <Button
-        android:id="@+id/btn_dangki_id"
+        android:id="@+id/btn_Mdangki_id"
         android:text="Đăng kí tài khoản"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/btn_dangnhap_id"
+        android:layout_above="@id/btn_Mdangnhap_id"
         />
     <!--Button đăng nhập
     *set id cho button đăng nhập
@@ -35,7 +35,7 @@
     *set cách dưới lên 10dp
     *dài: match, rộng : wrap-->
     <Button
-        android:id="@+id/btn_dangnhap_id"
+        android:id="@+id/btn_Mdangnhap_id"
         android:text="Đăng nhập"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="100dp"
