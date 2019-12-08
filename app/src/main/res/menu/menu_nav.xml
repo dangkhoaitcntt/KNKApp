@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/nav_trangchu"
+    android:title="Trang chủ"
+    android:icon="@drawable/ic_home_black"/>
+
+    <item android:id="@+id/nav_hoso"
+        android:title="Hồ sơ"
+        android:icon="@drawable/ic_profile_black"/>
+
+    <item android:id="@+id/nav_banbe"
+        android:title="Bạn bè"
+        android:icon="@drawable/ic_users_black"/>
+
+</menu>

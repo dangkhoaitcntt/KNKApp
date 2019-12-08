@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".BangDieuKhienActivity">
+
+    <!--FrameLayout để hiển thị khung nhìn-->
+    <FrameLayout
+        android:id="@+id/Frame_BDK_id"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!--Bottom Navigation để hiển thị menu (project of Tran Dang Khoa)-->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/Bottom_BDK_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/menu_nav"/>
+
+
+</LinearLayout>
