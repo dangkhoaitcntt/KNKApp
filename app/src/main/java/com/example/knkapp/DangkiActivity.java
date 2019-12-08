@@ -83,6 +83,7 @@ public class DangkiActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DangkiActivity.this,DangnhapActivity.class));
+                finish();
             }
         });
     }

@@ -48,6 +48,12 @@ public class HosoActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
+
+    @Override
     protected void onStart() {
         // kiểm tra khi bắt đầu ứng dụng
         checkUserStatus();
