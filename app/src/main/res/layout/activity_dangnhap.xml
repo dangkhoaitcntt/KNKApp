@@ -78,9 +78,17 @@
         android:text="Quên mật khẩu? lấy lại mật khẩu"
         android:textAlignment="center"
         android:layout_below="@id/btn_DNdangnhap_id"
-        android:textColor="@color/colorBlack"
+        android:textColor="@color/colorBlack" />
 
-        />
+        <!--đăng nhập bằng tài khoản google-->
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/btn_DNgoogle_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/txt_DNquenmk_id"
+        android:paddingTop="10sp"/>
+
 
     <!-- Textview click để đăng kí, nếu chưa có tài khoản-->
     <TextView
