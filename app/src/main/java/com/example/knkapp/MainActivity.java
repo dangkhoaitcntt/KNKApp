@@ -28,5 +28,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, DangkiActivity.class));
             }
         });
+
+        // xử lý nút button đăng nhập khi click vào. (bản quyền thuộc Trần Đăng Khoa)
+        btnDangnhap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // gọi activity đăng nhập
+                startActivity(new Intent(MainActivity.this, DangnhapActivity.class));
+            }
+        });
     }
 }

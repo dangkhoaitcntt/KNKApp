@@ -8,8 +8,10 @@
     android:gravity="center"
     tools:context=".HosoActivity">
 
+
+    <!--hiển thị email của người dùng đã đăng nhập-->
     <TextView
-        android:id="@+id/txt_Hoso_id"
+        android:id="@+id/txt_HSHoso_id"
         android:text="Hồ sơ"
         android:textSize="30sp"
         android:textColor="@color/colorPrimary"

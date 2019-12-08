@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    tools:context=".DangkiActivity">
+    tools:context=".DangnhapActivity">
 
     <!-- Textview đăng kí
         * set textview ở giữa
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="Đăng kí tài khoản"
+        android:text="Đăng nhập tài khoản"
         android:textColor="@color/colorBlack"
         android:textSize="25dp"
         />
@@ -35,9 +35,9 @@
         android:layout_centerVertical="true"
         android:id="@+id/emailTTL">
         <EditText
-            android:id="@+id/Edit_Demail_id"
+            android:id="@+id/Edit_DNemail_id"
             android:inputType="textEmailAddress"
-            android:hint="Nhập email để đăng kí"
+            android:hint="Nhập email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -52,31 +52,31 @@
         android:layout_below="@id/emailTTL"
         app:passwordToggleEnabled="true">
         <EditText
-            android:id="@+id/Edit_Dpassword_id"
+            android:id="@+id/Edit_DNpassword_id"
             android:inputType="textPassword"
-            android:hint="Nhập password để đăng kí"
+            android:hint="Nhập password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!--Button đăng kí tài khoản người dùng-->
     <Button
-        android:id="@+id/btn_Ddangki_id"
-        android:text="Đăng kí"
+        android:id="@+id/btn_DNdangnhap_id"
+        android:text="Đăng nhập"
         android:layout_below="@id/passwordTTL"
         android:layout_centerHorizontal="true"
         style="@style/Base.Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <!-- Textview click để đăng nhập, nếu đã có tài khoản-->
+    <!-- Textview click để đăng kí, nếu chưa có tài khoản-->
     <TextView
-        android:id="@+id/txt_Dyesaccount_id"
+        android:id="@+id/txt_noaccount_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bạn đã có tài khoản? Đăng nhập"
+        android:text="Bạn không có tài khoản? Đăng kí"
         android:textAlignment="center"
         android:layout_marginTop="30dp"
         android:textColor="@color/colorBlack"
-        android:layout_below="@+id/btn_Ddangki_id"/>
+        android:layout_below="@+id/btn_DNdangnhap_id"/>
 </RelativeLayout>

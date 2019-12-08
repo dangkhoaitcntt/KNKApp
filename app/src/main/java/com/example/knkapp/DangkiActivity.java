@@ -12,6 +12,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,6 +26,7 @@ public class DangkiActivity extends AppCompatActivity {
     // khai báo button và edittext
     EditText EditEmail, EditPassword;
     Button btnDangki;
+    TextView txtYesaccount;
 
 
     ProgressDialog progressDialog ;
@@ -48,6 +50,7 @@ public class DangkiActivity extends AppCompatActivity {
         EditEmail = findViewById(R.id.Edit_Demail_id);
         EditPassword= findViewById(R.id.Edit_Dpassword_id);
         btnDangki = findViewById(R.id.btn_Ddangki_id);
+        txtYesaccount= findViewById(R.id.txt_Dyesaccount_id);
 
         //Trong phương thức onCreate (), khởi tạo thể hiện FirebaseAuth.
         mAuth = FirebaseAuth.getInstance();
@@ -75,7 +78,13 @@ public class DangkiActivity extends AppCompatActivity {
 
             }
         });
-
+        // xử lý sự kiện click textview
+        txtYesaccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DangkiActivity.this,DangnhapActivity.class));
+            }
+        });
     }
 
     private void registerUser(String email, String password) {
