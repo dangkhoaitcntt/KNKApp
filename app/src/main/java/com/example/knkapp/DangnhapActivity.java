@@ -258,7 +258,9 @@ public class DangnhapActivity extends AppCompatActivity {
             }
         }
     }
-// hàm đăng nhập bằng tài khoản google
+
+
+    // hàm đăng nhập bằng tài khoản google
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
         mAuth.signInWithCredential(credential)
@@ -270,27 +272,29 @@ public class DangnhapActivity extends AppCompatActivity {
                             // với các đăng nhập thông tin của người dùng
                             FirebaseUser user = mAuth.getCurrentUser();
 
-                            // Lấy email người dùng và id của auth
-                            String email= user.getEmail();
-                            String uid= user.getUid();
-                            //Khi người dùng đâng kí, thông tin người dùng được lưu trữ theo thời gian thực
-                            // sử dụng hashMap
-                            HashMap<Object,String> hashMap= new HashMap<>();
-                            // đưa thông tin vào HashMap
-                            hashMap.put("email",email);
-                            hashMap.put("uid",uid);
-                            hashMap.put("name","");// sẽ thêm sao
-                            hashMap.put("phone","");
-                            hashMap.put("image","");
+                            // nếu người dùng đã đăng nhập, sẽ lây và hiển thị thông tin người dùng
+                            if (task.getResult().getAdditionalUserInfo().isNewUser()){
 
-                            // cơ sở dữ liệu của firebase
-                            FirebaseDatabase firebaseDatabase=  FirebaseDatabase.getInstance();
+                                // Lấy email người dùng và id của auth
+                                String email= user.getEmail();
+                                String uid= user.getUid();
+                                //Khi người dùng đâng kí, thông tin người dùng được lưu trữ theo thời gian thực
+                                // sử dụng hashMap
+                                HashMap<Object,String> hashMap= new HashMap<>();
+                                // đưa thông tin vào HashMap
+                                hashMap.put("email",email);
+                                hashMap.put("uid",uid);
+                                hashMap.put("name","");// sẽ thêm sao
+                                hashMap.put("phone","");
+                                hashMap.put("image","");
+                                // cơ sở dữ liệu của firebase
+                                FirebaseDatabase firebaseDatabase=  FirebaseDatabase.getInstance();
+                                // đường dẫn lưu trữ dữ liệu người dùng có tên "Users"
+                                DatabaseReference reference= firebaseDatabase.getReference("Users");
+                                // đưa dữ liệu vào hàm Hashmap trong csdl
+                                reference.child(uid).setValue(hashMap);
 
-                            // đường dẫn lưu trữ dữ liệu người dùng có tên "Users"
-                            DatabaseReference reference= firebaseDatabase.getReference("Users");
-                            // đưa dữ liệu vào hàm Hashmap trong csdl
-                            reference.child(uid).setValue(hashMap);
-
+                            }
 
                             // hiển thị email người dùng bằng Toast
                             Toast.makeText(DangnhapActivity.this, "Đã kết nối tới tài khoản Google "+user.getEmail(), Toast.LENGTH_SHORT).show();
