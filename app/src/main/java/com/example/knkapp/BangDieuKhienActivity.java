@@ -54,16 +54,7 @@ public class BangDieuKhienActivity extends AppCompatActivity {
                 public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                     // xử lý danh mục khi ấn click
                     switch (menuItem.getItemId()){
-                        //
-                        case R.id.nav_trangchu:
-                            actionBar.setTitle("Trang chủ"); // thay đổi tiêu đề thanh trạng thái
-                            TrangchuFragment trangchufragment= new TrangchuFragment();
-                            FragmentTransaction Ft1= getSupportFragmentManager().beginTransaction();
-                            Ft1.replace(R.id.Frame_BDK_id,trangchufragment,"");
-                            Ft1.commit();
-                            return true;
 
-                        //
                         case R.id.nav_hoso:
                             actionBar.setTitle("Hồ sơ"); // thay đổi tiêu đề thanh trạng thái
                             HosoFragment hosoFragment= new HosoFragment();

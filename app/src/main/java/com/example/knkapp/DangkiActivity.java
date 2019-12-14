@@ -31,7 +31,7 @@ public class DangkiActivity extends AppCompatActivity {
     Button btnDangki;
     TextView txtYesaccount;
 
-
+    // khai báo sử dụng hộp thoại
     ProgressDialog progressDialog ;
     //Khai báo một thể hiện của Firebase Auth
     private FirebaseAuth mAuth;
@@ -81,7 +81,7 @@ public class DangkiActivity extends AppCompatActivity {
 
             }
         });
-        // xử lý sự kiện click textview
+        // xử lý sự kiện nếu đã có tài khoản, chuyển đến trang đăng nhập
         txtYesaccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,11 +109,10 @@ public class DangkiActivity extends AppCompatActivity {
                             // sử dụng hashMap
                             HashMap<Object, String> hashMap= new HashMap<>();
                             // đưa thông tin vào HashMap
-                            hashMap.put("email",email);
-                            hashMap.put("uid",uid);
+                            hashMap.put("email",email); // email người dùng
+                            hashMap.put("uid",uid);  // id người dùng
                             hashMap.put("name","");// sẽ thêm sao
-                            hashMap.put("phone","");
-                            hashMap.put("image","");
+                            hashMap.put("phone",""); // sdt người dùng
 
                             // cơ sở dữ liệu của firebase
                             FirebaseDatabase firebaseDatabase=  FirebaseDatabase.getInstance();

@@ -282,11 +282,12 @@ public class DangnhapActivity extends AppCompatActivity {
                                 // sử dụng hashMap
                                 HashMap<Object,String> hashMap= new HashMap<>();
                                 // đưa thông tin vào HashMap
-                                hashMap.put("email",email);
-                                hashMap.put("uid",uid);
-                                hashMap.put("name","");// sẽ thêm sao
-                                hashMap.put("phone","");
-                                hashMap.put("image","");
+                                hashMap.put("email",email);// email người dùng
+                                hashMap.put("uid",uid);// id người dùng
+                                hashMap.put("name","");// tên người dùng
+                                hashMap.put("phone","");// người dùng
+                                hashMap.put("image","");// ảnh đại diện
+                                hashMap.put("cover","");// ảnh nền
                                 // cơ sở dữ liệu của firebase
                                 FirebaseDatabase firebaseDatabase=  FirebaseDatabase.getInstance();
                                 // đường dẫn lưu trữ dữ liệu người dùng có tên "Users"
