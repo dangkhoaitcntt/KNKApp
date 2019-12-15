@@ -21,6 +21,9 @@ import android.provider.MediaStore;
 import android.renderscript.Sampler;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -300,6 +303,50 @@ public class HosoFragment extends Fragment {
         // tạo và hiện thị hộp thoại thông báo
         builder.create().show();
     }
+
+
+    // tìm kiếm bạn bè
+    private void checkUserStatus(){
+        // lấy người dùng hiện tại
+        FirebaseUser user=firebaseAuth.getCurrentUser();
+        if(user != null){
+            // người dùng đã đăng nhâp ở đây
+            // lấy email đăng nhập của người dùng
+            //txtHoso.setText(user.getEmail());
+        } else {
+            // người dùng chưa đăng nhập, đi đến main activity
+            startActivity(new Intent(getActivity(), MainActivity.class));
+            getActivity().finish();
+        }
+    }
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        setHasOptionsMenu(true);// để hiển thị menu tùy chọn
+        super.onCreate(savedInstanceState);
+    }
+
+    /*tùy chon menu*/
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        // menu nâng cao dùng infale
+        inflater.inflate(R.menu.menu_main,menu);
+        super.onCreateOptionsMenu(menu,inflater);
+    }
+    // xử lý khi click vào mục của menu
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // lấy id của các mục
+        int id= item.getItemId();
+        if(id== R.id.action_dangxuat){
+            firebaseAuth.signOut();// đăng xuất ra khổi tài khoản
+            checkUserStatus();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
 }
 

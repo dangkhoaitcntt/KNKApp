@@ -101,24 +101,5 @@ public class BangDieuKhienActivity extends AppCompatActivity {
         checkUserStatus();
         super.onStart();
     }
-    /*tùy chon menu*/
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // menu nâng cao dùng infale
-        getMenuInflater().inflate(R.menu.menu_main,menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-    // xử lý khi click vào mục của menu
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // lấy id của các mục
-        int id= item.getItemId();
-        if(id== R.id.action_dangxuat){
-            firebaseAuth.signOut();// đăng xuất ra khổi tài khoản
-            checkUserStatus();
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }
