@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,7 +28,6 @@ public class BangDieuKhienActivity extends AppCompatActivity {
 
         // tạo thanh tiêu đề dùng actionbar
          actionBar = getSupportActionBar();
-        actionBar.setTitle("Hồ sơ người dùng");
 
         // lấy người dùng
         firebaseAuth = FirebaseAuth.getInstance();
@@ -40,10 +38,10 @@ public class BangDieuKhienActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(selectedListener);
 
 
-        actionBar.setTitle("Trang chủ"); // thay đổi tiêu đề thanh trạng thái
-        TrangchuFragment trangchufragment= new TrangchuFragment();
+        actionBar.setTitle("Hello"); // thay đổi tiêu đề thanh trạng thái
+        WelcomsFragment welcomsFragment= new WelcomsFragment();
         FragmentTransaction Ft1= getSupportFragmentManager().beginTransaction();
-        Ft1.replace(R.id.Frame_BDK_id,trangchufragment,"");
+        Ft1.replace(R.id.Frame_BDK_id,welcomsFragment,"");
         Ft1.commit();
 
     }

@@ -5,12 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".BanbeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!--Thêm recyclerView vào-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/hienthibanbe_id"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:text="Bạn bè" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

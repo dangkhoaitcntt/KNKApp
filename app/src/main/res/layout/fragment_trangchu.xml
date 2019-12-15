@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TrangchuFragment">
+    android:padding="20dp"
+    tools:context=".WelcomsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
+
+
     <TextView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:textAlignment="center"
-    android:textSize="30sp"
-    android:text="Trang chủ" />
+        android:id="@+id/wc_idbdk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:text="Chào mừng đến với ứng dụng chat KNK "
+        android:textColor="@color/colorAccent"/>
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/logo_idbdk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/logo"
+        />
+
+
+
+</RelativeLayout>

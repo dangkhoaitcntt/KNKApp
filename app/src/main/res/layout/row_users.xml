@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:contentPadding="10dp"
+    app:cardElevation="5dp"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="2dp">
+
+    <!--Thiết kế giao diện cho một row-->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:id="@+id/avata_id_banbe"
+            android:src="@drawable/ic_avatadefault_img"
+            android:layout_width="70dp"
+            android:layout_height="70dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--Tên-->
+            <TextView
+                android:id="@+id/ten_id_banbe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tên"
+                android:textSize="18dp"
+                android:textColor="@color/colorBlack"/>
+            <!--email-->
+            <TextView
+                android:id="@+id/email_id_banbe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Emai"
+                android:textColor="@color/colorBlack"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
