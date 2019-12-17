@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1EDED"
+    tools:context=".NhantinActivity">
+
+    <!--Thiết kế mục người nhận tin nhắn-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/thanhtt_id"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:id="@+id/anhnguoinhantin_id"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/ic_avatadefault_icon"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginLeft="20dp">
+            <!--Ten Nguoi nhan tin nhan-->
+            <TextView
+                android:id="@+id/txtNguoinhan_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tên"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"/>
+            <!--Tinh trang nguoi nhan tin-->
+            <TextView
+                android:id="@+id/txtTinhTrangNguoiNhan_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Đang truy cập"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"/>
+            </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+<!--Thiết kế giao diện nhận và gửi tin -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/DSNhantin_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/thanhtt_id"/>
+
+    <!--gửi và chỉnh sửa tin nhắn , button trong layout-->
+    <LinearLayout
+        android:id="@+id/GiaoDienNhanTin_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorWhite"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <!--Edittext nhập tin nhắn-->
+        <EditText
+            android:id="@+id/txt_SoanTinNhan_id"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="Soạn tin nhắn"
+            android:padding="15dp"
+            android:inputType="textCapSentences|textMultiLine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+        <!--button gửi tin nhắn-->
+        <ImageButton
+            android:id="@+id/Ibtn_guiTinNhan_id"
+            android:src="@drawable/ic_sends_tinnhan"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@null" />
+    </LinearLayout>
+</RelativeLayout>

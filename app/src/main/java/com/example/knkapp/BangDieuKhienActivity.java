@@ -7,7 +7,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -68,6 +67,13 @@ public class BangDieuKhienActivity extends AppCompatActivity {
                             FragmentTransaction Ft3= getSupportFragmentManager().beginTransaction();
                             Ft3.replace(R.id.Frame_BDK_id,banbeFragment,"");
                             Ft3.commit();
+                            return true;
+                        case R.id.nav_nhantin:
+                            actionBar.setTitle("Nhắn tin"); // thay đổi tiêu đề thanh trạng thái
+                            DSNhantinFragment dsNhantinFragment= new DSNhantinFragment();
+                            FragmentTransaction Ft4= getSupportFragmentManager().beginTransaction();
+                            Ft4.replace(R.id.Frame_BDK_id,dsNhantinFragment,"");
+                            Ft4.commit();
                             return true;
                     }
                     return false;

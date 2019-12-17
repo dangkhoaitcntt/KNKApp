@@ -24,5 +24,4 @@
         android:background="?android:attr/windowBackground"
         app:menu="@menu/menu_nav"/>
 
-
 </LinearLayout>

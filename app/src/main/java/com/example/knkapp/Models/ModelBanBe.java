@@ -1,4 +1,4 @@
-package com.example.knkapp;
+package com.example.knkapp.Models;
 
 public class ModelBanBe {
 
