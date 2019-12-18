@@ -286,8 +286,6 @@ public class DangnhapActivity extends AppCompatActivity {
                                 hashMap.put("uid",uid);// id người dùng
                                 hashMap.put("name","");// tên người dùng
                                 hashMap.put("phone","");// người dùng
-                                hashMap.put("image","");// ảnh đại diện
-                                hashMap.put("cover","");// ảnh nền
                                 // cơ sở dữ liệu của firebase
                                 FirebaseDatabase firebaseDatabase=  FirebaseDatabase.getInstance();
                                 // đường dẫn lưu trữ dữ liệu người dùng có tên "Users"

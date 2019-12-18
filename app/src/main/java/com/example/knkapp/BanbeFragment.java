@@ -1,6 +1,5 @@
 package com.example.knkapp;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -31,8 +30,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
-
-
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -42,8 +39,7 @@ public class BanbeFragment extends Fragment {
     RecyclerView recyclerView;
     MoviesBanbe moviesBanbe;
     List<ModelBanBe> modelBanBeList;
-
-    // người dùng
+    // khai báo lưu trữ
     FirebaseAuth firebaseAuth;
 
     public BanbeFragment() {
@@ -177,10 +173,8 @@ public class BanbeFragment extends Fragment {
                 }else{
                     LayTatCaBanBe();
                 }
-
                 return false;
             }
-
             @Override
             public boolean onQueryTextChange(String newText) {
                 // gọi khi người dùng nhấn button tìm kiếm từ bàn phím
