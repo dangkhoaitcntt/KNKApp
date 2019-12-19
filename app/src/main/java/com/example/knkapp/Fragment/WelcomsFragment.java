@@ -1,4 +1,4 @@
-package com.example.knkapp;
+package com.example.knkapp.Fragment;
 
 
 import android.content.Intent;
@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.knkapp.MainActivity;
+import com.example.knkapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 

@@ -1,4 +1,4 @@
-package com.example.knkapp;
+package com.example.knkapp.Fragment;
 
 
 import android.Manifest;
@@ -32,6 +32,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.knkapp.MainActivity;
+import com.example.knkapp.R;
 import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;

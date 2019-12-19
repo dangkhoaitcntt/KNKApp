@@ -47,13 +47,16 @@
     </androidx.appcompat.widget.Toolbar>
 
 <!--Thiết kế giao diện nhận và gửi tin -->
+
+    <!--gửi và chỉnh sửa tin nhắn , button trong layout-->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/DSNhantin_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/thanhtt_id"/>
+        android:layout_below="@id/thanhtt_id"
+        android:layout_marginTop="5dp" />
 
-    <!--gửi và chỉnh sửa tin nhắn , button trong layout-->
     <LinearLayout
         android:id="@+id/GiaoDienNhanTin_id"
         android:layout_width="match_parent"

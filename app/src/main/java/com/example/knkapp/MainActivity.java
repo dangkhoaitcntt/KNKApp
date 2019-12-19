@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         btnDangki.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // khởi động activity đăng nhập
+                // khởi động activity đăng ký
                 startActivity(new Intent(MainActivity.this, DangkiActivity.class));
             }
         });

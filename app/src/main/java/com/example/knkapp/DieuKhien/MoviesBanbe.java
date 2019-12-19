@@ -1,4 +1,4 @@
-package com.example.knkapp;
+package com.example.knkapp.DieuKhien;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,12 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.knkapp.Models.ModelBanBe;
+import com.example.knkapp.NhantinActivity;
+import com.example.knkapp.R;
 
 import java.util.List;
 
@@ -48,7 +49,7 @@ public class MoviesBanbe extends RecyclerView.Adapter<MoviesBanbe.MyHolder>{
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(context,NhantinActivity.class);
+                Intent intent= new Intent(context, NhantinActivity.class);
                 intent.putExtra("hisUid",hisUID);
                 context.startActivity(intent);
             }
@@ -59,7 +60,7 @@ public class MoviesBanbe extends RecyclerView.Adapter<MoviesBanbe.MyHolder>{
         return userList.size();
     }
 
-    class  MyHolder extends RecyclerView.ViewHolder{
+    static class  MyHolder extends RecyclerView.ViewHolder{
 
        TextView tenBanBe, emailBeBe;
 

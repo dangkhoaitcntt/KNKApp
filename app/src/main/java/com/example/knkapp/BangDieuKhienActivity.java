@@ -9,6 +9,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.knkapp.Fragment.BanbeFragment;
+import com.example.knkapp.Fragment.DSNhantinFragment;
+import com.example.knkapp.Fragment.HosoFragment;
+import com.example.knkapp.Fragment.WelcomsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -60,7 +64,6 @@ public class BangDieuKhienActivity extends AppCompatActivity {
                             Ft2.commit();
                             return true;
 
-                        //
                         case R.id.nav_banbe:
                             actionBar.setTitle("Bạn bè"); // thay đổi tiêu đề thanh trạng thái
                             BanbeFragment banbeFragment= new BanbeFragment();

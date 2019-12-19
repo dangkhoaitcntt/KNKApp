@@ -133,6 +133,9 @@ public class DangnhapActivity extends AppCompatActivity {
         //hộp thoại tiến trình
         progressDialog = new ProgressDialog(this);
     }
+
+
+
     // hàm lấy lại mật khẩu
     private void hopthoailaylaimk() {
         AlertDialog.Builder builder= new AlertDialog.Builder(this);
