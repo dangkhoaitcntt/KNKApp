@@ -1,11 +1,15 @@
 package com.example.knkapp.DieuKhien;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,8 +18,15 @@ import com.example.knkapp.Models.ModelChat;
 import com.example.knkapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -47,7 +58,7 @@ public class MoviesChat extends RecyclerView.Adapter<MoviesChat.MyHoder> {
         }
     }
     @Override
-    public void onBindViewHolder(@NonNull MyHoder holder, int position) {
+    public void onBindViewHolder(@NonNull MyHoder holder, final int position) {
         // lấy dữ liệu
         String tinNhan= DSnhanTin.get(position).getTinnhan();
         String thoiGian= DSnhanTin.get(position).getThoigian();
@@ -61,6 +72,38 @@ public class MoviesChat extends RecyclerView.Adapter<MoviesChat.MyHoder> {
         holder.tinnhan.setText(tinNhan);
         holder.thoigian.setText(dateTime);
 
+
+        // ------code xóa tin nhắn ---------
+        // chọn để show thông báo xóa tin nhắn
+        holder.tinnhanLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // hiện màng hình thông báo
+                AlertDialog.Builder builder= new AlertDialog.Builder(context);
+                // tiêu đề thông báo
+                builder.setTitle("Xóa tin nhắn");
+                // nội dung thông báo
+                builder.setMessage("Bạn có muốn xóa tin nhắn này ?");
+                // button xóa tin nhắn
+                builder.setPositiveButton("Xóa", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // gọi hàm xóa tin nhắn
+                        xoaTinNhan(position);
+                    }
+                });
+                // button thoát
+                builder.setNegativeButton("Thoát", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // thoát màng hình thông báo
+                        dialog.dismiss();
+                    }
+                });
+                // tạo và hiển thị thông báo
+                builder.create().show();
+            }
+        });
         // thiết lập tình trạng xem/ đã gửi tin nhắn
         if(position==DSnhanTin.size()-1){
             if(DSnhanTin.get(position).isDaxem()){
@@ -72,7 +115,50 @@ public class MoviesChat extends RecyclerView.Adapter<MoviesChat.MyHoder> {
         }else {
             holder.daxem.setVisibility(View.GONE);
         }
+    }
 
+    private void xoaTinNhan(int position) {
+
+        // lấy chủ sở hữu
+        final String myUid= FirebaseAuth.getInstance().getUid();
+
+        // lấy thời gian của tin nhắn
+        //so sánh dấu thời gian của tin nhắn nhấp chuột với tất cả tin nhắn
+        // trong các cuộc trò chuyện
+        //trong đó cả hai giá trị khớp sẽ xóa thông báo đó
+
+        String dauThoiGian= DSnhanTin.get(position).getThoigian();
+        final DatabaseReference databaseReference= FirebaseDatabase
+                .getInstance().getReference("Chats");
+        Query query= databaseReference.orderByChild("thoigian").equalTo(dauThoiGian);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds: dataSnapshot.getChildren()){
+
+                    // để người gửi tin chỉ xóa được tin nhắn của mình
+                    // nếu khớp thì xóa tin nhắn
+                    if(ds.child("guitin").getValue().equals(myUid)){
+                        //2 kieu xoa
+                        //xóa tin nhắn khỏi cuộc trò chuyện
+                        ds.getRef().removeValue();
+                        // đặt giá trị tin nhắn "tin nhắn đã xóa"
+                       /* HashMap<String,Object> hashMap = new HashMap<>();
+                        hashMap.put("tinnhan","tin nhắn này đã xóa...");
+                        ds.getRef().updateChildren(hashMap);*/
+
+                        Toast.makeText(context, "Xóa tin nhắn thành công !", Toast.LENGTH_SHORT).show();
+                        
+                    }
+                    else{
+                        Toast.makeText(context, "Xóa tin nhắn thất bại !", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
 
     }
 
@@ -94,12 +180,14 @@ public class MoviesChat extends RecyclerView.Adapter<MoviesChat.MyHoder> {
 
     class  MyHoder extends RecyclerView.ViewHolder{
         TextView tinnhan, thoigian, daxem;
+        LinearLayout tinnhanLayout; // khi click vào tin nhắn thì hiển thị thông báo xóa tin nhắn
         // view holder class
         public MyHoder(@NonNull View itemView) {
             super(itemView);
             tinnhan = itemView.findViewById(R.id.txtMessage_id);
             daxem= itemView.findViewById(R.id.txtdaXem_id);
             thoigian= itemView.findViewById(R.id.txtTime_id);
+            tinnhanLayout= itemView.findViewById(R.id.tinnhanLayout_id);
         }
     }
 

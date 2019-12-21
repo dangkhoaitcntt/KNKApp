@@ -32,7 +32,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:19.2.0'
     implementation 'com.google.firebase:firebase-database:19.2.0'
 
-    implementation 'com.google.firebase:firebase-storage:16.0.4'
+    implementation 'com.google.firebase:firebase-storage:19.1.0'
     // thư viện đăng nhập bằng tài khoản google
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
 
